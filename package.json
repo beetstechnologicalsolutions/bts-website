@@ -1,0 +1,17 @@
+{
+  "name": "bts-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "BTS (Beets Technological Solutions) website",
+  "scripts": {
+    "test": "node tests/fingerprint.js check public/index.html tests/fingerprint.json && node tests/security-check.js public/index.html && node tests/xss-test.js public/index.html",
+    "build": "npm test",
+    "fingerprint": "node tests/fingerprint.js make public/index.html > tests/fingerprint.json"
+  },
+  "devDependencies": {
+    "jsdom": "24.1.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
