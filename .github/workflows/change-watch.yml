@@ -1,0 +1,51 @@
+name: Change watch
+# Runs the moment anything is pushed to any branch. The hourly update should
+# only ever change the news and vulnerability data, so anything else (code,
+# tests, fingerprint, workflows, Vercel settings, or rewritten history) opens
+# a GitHub issue, which GitHub emails you about. Read-only.
+on:
+  push:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check what changed
+        env:
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+          FORCED: ${{ github.event.forced }}
+          REF: ${{ github.ref_name }}
+        run: |
+          base="$BEFORE"
+          if [ "$base" = "0000000000000000000000000000000000000000" ]; then
+            base=$(git merge-base origin/main "$AFTER" 2>/dev/null || true)
+          fi
+          if [ "$FORCED" = "true" ] || [ -z "$base" ] || ! git cat-file -e "$base^{commit}" 2>/dev/null; then
+            {
+              echo "The branch \`$REF\` was force-pushed or its history was rewritten. Commits may have been replaced or removed."
+              echo
+              echo "If you didn't do this, treat it as a possible compromise: change your GitHub password, check Settings, Sessions and Settings, SSH and GPG keys, and check Vercel's deployments."
+            } > alert.md
+          else
+            node .github/scripts/change-watch.mjs "$base" "$AFTER" alert.md
+          fi
+      - name: Open an alert issue
+        if: hashFiles('alert.md') != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REF: ${{ github.ref_name }}
+          ACTOR: ${{ github.actor }}
+        run: |
+          gh issue create --repo "$GITHUB_REPOSITORY" \
+            --title "CHANGE ALERT: ${REF} changed beyond the threat data (pushed by ${ACTOR})" \
+            --body-file alert.md

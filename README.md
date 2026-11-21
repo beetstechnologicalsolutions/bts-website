@@ -14,6 +14,9 @@ The website for BTS (Beets Technological Solutions). It is a single HTML page wi
 | `.github/workflows/checks.yml` | Runs the same checks on GitHub whenever anything is pushed |
 | `.github/workflows/kev-alert.yml` | Every 10 minutes, checks CISA's Known Exploited Vulnerabilities list and opens an issue (which GitHub emails you about) when a new entry isn't on the site yet |
 | `.github/scripts/kev-alert.mjs` | The script the KEV alert runs. It only reads CISA's public data and never changes the site |
+| `.github/workflows/site-watch.yml` | Every 5 minutes, downloads the live site and runs the tamper, security and injection checks plus a security-header check. Opens a "SECURITY ALERT" issue if anything fails |
+| `.github/workflows/change-watch.yml` | Runs on every push. Opens a "CHANGE ALERT" issue if anything other than the news and vulnerability data changed, or if history was rewritten |
+| `.github/scripts/change-watch.mjs`, `.github/scripts/header-check.mjs` | The scripts those two watches run |
 
 ## How updates are protected
 

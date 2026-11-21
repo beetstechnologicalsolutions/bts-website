@@ -1,0 +1,66 @@
+name: Live site watch
+# Every 5 minutes (GitHub's fastest timer), downloads the live website and runs
+# the same tamper, security and injection checks as a deploy, plus a check of
+# the security headers. Opens a GitHub issue, which GitHub emails you about,
+# if anything fails. Read-only: it never changes the site.
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+concurrency:
+  group: site-watch
+  cancel-in-progress: false
+env:
+  SITE_URL: https://bts-website-vert.vercel.app/
+  ALERT_TITLE: "SECURITY ALERT: live BTS website failed its checks"
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install --no-audit --no-fund
+      - name: Download the live site
+        id: fetch
+        run: |
+          for i in 1 2 3; do
+            if curl -sS -L -m 30 --fail -D live-headers.txt -o live.html "$SITE_URL"; then exit 0; fi
+            sleep 20
+          done
+          echo "SITE UNREACHABLE: $SITE_URL could not be downloaded after 3 tries" > results.txt
+          exit 1
+      - name: Check the live site
+        id: check
+        if: steps.fetch.outcome == 'success'
+        run: |
+          set +e
+          ok=0
+          node tests/fingerprint.js check live.html tests/fingerprint.json >> results.txt 2>&1 || ok=1
+          node tests/security-check.js live.html >> results.txt 2>&1 || ok=1
+          node tests/xss-test.js live.html >> results.txt 2>&1 || ok=1
+          node .github/scripts/header-check.mjs live-headers.txt vercel.json >> results.txt 2>&1 || ok=1
+          cat results.txt
+          exit $ok
+      - name: Open an alert issue
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          open=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --search "\"$ALERT_TITLE\" in:title" --json number --jq 'length')
+          if [ "$open" != "0" ]; then echo "An alert is already open; not opening another."; exit 0; fi
+          {
+            echo "The live website at $SITE_URL failed its checks at $(TZ=Europe/London date '+%d %b %Y, %H:%M') UK time."
+            echo
+            echo '```'
+            sed 's/[<>]//g' results.txt 2>/dev/null | head -60
+            echo '```'
+            echo
+            echo "What to do: open the project in Vercel, go to Deployments, and promote the last deployment you trust to Production. Then check GitHub for changes you didn't make. Close this issue once the site passes again; the watch only opens a new alert when no alert is open."
+          } > alert.md
+          gh issue create --repo "$GITHUB_REPOSITORY" --title "$ALERT_TITLE" --body-file alert.md
