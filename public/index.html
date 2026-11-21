@@ -782,8 +782,32 @@ var SOCIAL={linkedin:"",x:"",instagram:""};
 var CLIENTS=[];
 
 /* DATA:START */
-var UPDATED="20 Nov 2026, 16:21";
+var UPDATED="21 Nov 2026, 18:20";
 var VULNS=[
+ {
+  "id": "CVE-2026-133968",
+  "sev": "critical",
+  "score": "9.8",
+  "product": "MONAI Label 0.8.5 and earlier, an open-source server used to label medical scans for AI training",
+  "title": "Medical imaging tool MONAI Label hacked through an unpatched file upload flaw",
+  "what": "Anyone who can reach the server can upload a file to a folder of their choosing and then run their own code on it, because the default setup needs no login. Amazon says suspected China-linked attackers used it to get full control of a university server, with exploitation starting in September.",
+  "fix": "There is no fixed release yet. Take the server off the internet or block untrusted access, turn on login, run it under a limited account, and only use a source build that includes the October fix.",
+  "added": "20 Nov 2026",
+  "src": "The Hacker News",
+  "url": "https://thehackernews.com/2026/11/attackers-ai-agents-found-zero-day-in.html"
+ },
+ {
+  "id": "CVE-2025-42884",
+  "sev": "medium",
+  "score": "6.5",
+  "product": "SAP NetWeaver Enterprise Portal (EP-BASIS 7.50 and EP-RUNTIME 7.50)",
+  "title": "SAP NetWeaver portal flaw from 2025 is now being exploited",
+  "what": "NetWeaver Enterprise Portal is the web front end many companies put in front of their SAP business systems. An attacker with no login can feed it crafted lookup settings that point the server at a directory service the attacker picks. That can let them read or change some information about the server.",
+  "fix": "Apply SAP security note 3660969, released on SAP Patch Day in November 2025. If you outsource SAP support, ask your provider to confirm it is installed.",
+  "added": "20 Nov 2026",
+  "src": "NVD (NIST)",
+  "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-42884"
+ },
  {
   "id": "CVE-2026-123890",
   "sev": "critical",
@@ -1243,6 +1267,24 @@ var VULNS=[
 ];
 var NEWS=[
  {
+  "region": "Global",
+  "date": "21 Nov 2026",
+  "title": "Microsoft says a flaw in Entra Connect Health let outsiders read tenant details",
+  "body": "Entra Connect Health is the Microsoft cloud service that monitors the link between a company's own servers and its Microsoft 365 sign-in system. Microsoft found a flaw in its API on 9 November, fixed it on its side on 19 November, and is now telling affected customers that outsiders read tenant details such as admin and technical contact email addresses, tenant names, domains and licence types. Microsoft says no passwords, tokens or valid keys were exposed, and it has not said who was behind it or how many tenants were hit.",
+  "why": "If you use Microsoft 365, check Azure Service Health for a notice this week, warn your IT admins to expect targeted phishing, and make sure every admin account uses phishing-resistant MFA.",
+  "src": "BleepingComputer",
+  "url": "https://www.bleepingcomputer.com/news/security/microsoft-entra-connect-health-flaw-exploited-to-steal-tenant-data/"
+ },
+ {
+  "region": "Asia-Pacific",
+  "date": "21 Nov 2026",
+  "title": "Japan takes its Fugaku supercomputer offline after attackers steal user login details",
+  "body": "RIKEN, the research body that runs Fugaku, believes attackers got in through an online status dashboard between 10 and 13 November and left malware on its servers. Names, email addresses and login details for 4,222 Fugaku users and 375 users of its smaller Rikyu system may be exposed. RIKEN shut the machine down on 13 November when someone tried to log in with stolen credentials.",
+  "why": "Check this week that any status page or admin dashboard your business runs needs a login and is not open to the whole internet, and change any passwords stored on it.",
+  "src": "TechRadar",
+  "url": "https://www.techradar.com/pro/japanese-supercomputer-hit-by-suspected-cyberattack-fugaku-facility-was-apparently-lacking-in-some-essential-security-protection"
+ },
+ {
   "region": "UK",
   "date": "20 Nov 2026",
   "title": "Thousands of UK supermarket fridge controllers taken offline after a weak password flaw was found",
@@ -1268,6 +1310,15 @@ var NEWS=[
   "why": "Check this week that your payroll and HR systems use two-step sign-in, and that you know who to call at each provider if they go offline.",
   "src": "Help Net Security",
   "url": "https://www.helpnetsecurity.com/2026/11/20/european-commission-ai-generated-cyberattack-publicly-available-tool/"
+ },
+ {
+  "region": "Americas",
+  "date": "20 Nov 2026",
+  "title": "FBI investigates an apparent breach of its national crime database",
+  "body": "CNN reports, citing two people briefed on the investigation, that the FBI is looking into an apparent hack of the National Crime Information Center. Police across the US use this database to check warrants and run background checks. It is not yet clear what data was reached, the FBI has not commented, and it would be the bureau's second breach in recent months.",
+  "why": "Review who can reach your most sensitive records this week, and remove access for anyone who no longer needs it.",
+  "src": "CNN via Yahoo News",
+  "url": "https://www.yahoo.com/news/us/articles/fbi-hacked-again-time-breach-022312420.html"
  },
  {
   "region": "Global",
@@ -1306,24 +1357,6 @@ var NEWS=[
   "url": "https://bleepingcomputer.com/news/security/nvidia-investigating-gentlemen-ransomware-breach-claims"
  },
  {
-  "region": "Europe",
-  "date": "18 Nov 2026",
-  "title": "Norwegian energy company Equinor works to contain a cyber attack on its IT systems",
-  "body": "Equinor, which is majority owned by the Norwegian state, detected the attack on 17 Nov and says staff may have trouble using some company applications. It says oil and gas production has not been affected and it has seen no sign of stolen data. It has not said who was behind the attack or how they got in.",
-  "why": "Check this week that you could keep trading for a few days without email and your main office apps, and write down who to call if they go down.",
-  "src": "The Record",
-  "url": "https://therecord.media/norway-equinor-cyberattack-energy"
- },
- {
-  "region": "UK",
-  "date": "18 Nov 2026",
-  "title": "TfL takes Oyster photocard site offline after details of about 265,000 customers are exposed",
-  "body": "Transport for London spotted suspicious activity on its photocard website on Monday and took the system offline. Names, email and home addresses, phone numbers, dates of birth, and security questions and answers may have been accessed. TfL says passwords, card details and journey data were not affected, and it has told the ICO.",
-  "why": "Change any security questions and answers you have reused across accounts this week, and warn staff to expect fake emails claiming to be from TfL.",
-  "src": "BBC via Yahoo News",
-  "url": "https://www.yahoo.com/news/world/articles/tfl-photocard-breach-exposes-265-204958448.html"
- },
- {
   "region": "Nigeria",
   "date": "18 Nov 2026",
   "title": "CBN directors warn Nigerian banks about the risks of AI tools",
@@ -1331,15 +1364,6 @@ var NEWS=[
   "why": "Agree a rule this week that no payment goes out on an urgent email or call alone, and confirm requests by phoning a number you already have.",
   "src": "BusinessDay",
   "url": "https://businessday.ng/news/article/ai-agents-pose-new-risks-to-nigerian-banks-cbn-warns/"
- },
- {
-  "region": "Global",
-  "date": "17 Nov 2026",
-  "title": "Hackers abused a flaw at website testing firm Optimizely to plant card-skimming code on 178 sites",
-  "body": "Optimizely, whose tools let companies test changes to their websites, says an attacker exploited a flaw in its Experimentation platform and added malicious JavaScript to some customer projects on 16 and 17 November. Researchers at Report URI found infected scripts on the sites of 178 organisations, including the BBC, HSBC, Zoom and IKEA, which tried to skim payment details and swap cryptocurrency addresses. Optimizely says the flaw is fixed and the injected code has been removed.",
-  "why": "List every third-party script that runs on your checkout and login pages, remove any you no longer use, and ask your web developer about adding a Content Security Policy.",
-  "src": "SecurityWeek",
-  "url": "https://www.securityweek.com/optimizely-vulnerability-exploited-to-serve-malware-on-major-websites/"
  },
  {
   "region": "Nigeria",
