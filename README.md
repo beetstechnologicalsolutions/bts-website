@@ -12,6 +12,8 @@ The website for BTS (Beets Technological Solutions). It is a single HTML page wi
 | `tests/fingerprint.json` | The approved fingerprint of the design (everything except the news and vulnerability data) |
 | `vercel.json` | Vercel settings: runs the checks, publishes `public/`, and adds security headers |
 | `.github/workflows/checks.yml` | Runs the same checks on GitHub whenever anything is pushed |
+| `.github/workflows/kev-alert.yml` | Every 10 minutes, checks CISA's Known Exploited Vulnerabilities list and opens an issue (which GitHub emails you about) when a new entry isn't on the site yet |
+| `.github/scripts/kev-alert.mjs` | The script the KEV alert runs. It only reads CISA's public data and never changes the site |
 
 ## How updates are protected
 

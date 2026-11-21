@@ -1,0 +1,43 @@
+name: KEV alert
+# Every 10 minutes, checks CISA's Known Exploited Vulnerabilities list for new
+# entries the website doesn't show yet, and opens a GitHub issue about them.
+# GitHub emails you about new issues in your repository.
+# It only reads public data and never changes the website.
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+concurrency:
+  group: kev-alert
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Restore list of entries already seen
+        uses: actions/cache/restore@v4
+        with:
+          path: kev-seen.json
+          key: kev-seen-${{ github.run_id }}
+          restore-keys: kev-seen-
+      - name: Check for new KEV entries
+        run: node .github/scripts/kev-alert.mjs kev-seen.json public/index.html kev-alert.md
+      - name: Save list of entries seen
+        if: hashFiles('kev-seen.json') != ''
+        uses: actions/cache/save@v4
+        with:
+          path: kev-seen.json
+          key: kev-seen-${{ github.run_id }}
+      - name: Open an alert issue
+        if: hashFiles('kev-alert.md') != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue create --repo "$GITHUB_REPOSITORY" --title "$(cat kev-alert.md.title)" --body-file kev-alert.md
