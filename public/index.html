@@ -782,8 +782,20 @@ var SOCIAL={linkedin:"",x:"",instagram:""};
 var CLIENTS=[];
 
 /* DATA:START */
-var UPDATED="23 Nov 2026, 11:21";
+var UPDATED="23 Nov 2026, 12:31";
 var VULNS=[
+ {
+  "id": "CVE-2026-131914",
+  "sev": "critical",
+  "score": "9.3",
+  "product": "Idunno.AntiCsrf 0.9.1.0 and 0.9.1 Beta, an old add-on that protects ASP.NET WebForms sites from forged form submissions",
+  "title": "Abandoned ASP.NET security add-on lets attackers run code on web servers without logging in",
+  "what": "The add-on trusts data sent in a form field and unpacks it without checking it, so one crafted web request can run code on the IIS server. Google's Mandiant team says it has seen this used in real attacks. The project has had no updates since 2008.",
+  "fix": "There is no patch. Remove the add-on and switch to the built-in ASP.NET anti-forgery features, then rotate machine keys and database passwords if you find signs of attack.",
+  "added": "23 Nov 2026",
+  "src": "The Hacker News",
+  "url": "https://thehackernews.com/2026/11/hackers-exploit-critical-aspnet-anti.html"
+ },
  {
   "id": "CVE-2026-133968",
   "sev": "critical",
@@ -1264,6 +1276,24 @@ var NEWS=[
   "url": "https://www.koreajoongangdaily.com/business/kepco-data-breach-exposes-personal-information-of-15-million-users/12985064"
  },
  {
+  "region": "Europe",
+  "date": "23 Nov 2026",
+  "title": "European Commission still fighting an intrusion first spotted a month ago",
+  "body": "Euronews reports that attackers found in the Commission's internal networks on 22 October have not been fully removed. The EU Academy learning site was taken offline on Saturday, and the Commission has confirmed that names and email addresses of its users leaked. Unnamed sources say a China-backed group is suspected, which the Commission has not confirmed.",
+  "why": "If you or your staff have an EU Academy account, expect phishing emails that use your name, and do not click links in unexpected messages about the account.",
+  "src": "Euronews",
+  "url": "https://www.euronews.com/2026/11/23/exclusive-china-backed-hackers-suspected-behind-ongoing-eu-commission-cyberattack"
+ },
+ {
+  "region": "UK",
+  "date": "23 Nov 2026",
+  "title": "Next says some company data was accessed through a hacked online supplier",
+  "body": "High street retailer Next says one of its online suppliers was breached, giving outsiders access to a limited set of data about Next. It says current evidence shows no customer personal data was taken and its own systems were not hit. The supplier has not been named, and Next is working with police and regulators.",
+  "why": "List the outside firms that hold your business or customer data this week, and ask each one how and how fast they would tell you about a breach.",
+  "src": "PA Media via The Irish News",
+  "url": "https://www.irishnews.com/news/uk/next-says-some-data-accessed-in-cyber-incident-affecting-online-supplier-KT3N7DH7JJKEVONRGL7NPUVOGY/"
+ },
+ {
   "region": "Global",
   "date": "22 Nov 2026",
   "title": "OpenRouter drops three AI hosting providers after researchers find prompts were copied for months",
@@ -1280,15 +1310,6 @@ var NEWS=[
   "why": "If your business buys software licences online, check your card statements this week for charges you don't recognise, and ask your bank to replace any card you used at a Cleverbridge checkout.",
   "src": "BleepingComputer",
   "url": "https://www.bleepingcomputer.com/news/security/cleverbridge-warns-hackers-stole-credit-card-numbers-cvvs-in-data-breach/"
- },
- {
-  "region": "Europe",
-  "date": "21 Nov 2026",
-  "title": "Austria's Foreign Ministry says intruders viewed staff contact details through its outsourced website",
-  "body": "Austria's Foreign Ministry says someone got unauthorised access to its website, which an outside provider runs, on 12 and 13 November. Investigators found the intruders viewed names and work contact details of staff in Vienna and at Austrian embassies abroad. The ministry says the public's data was not affected, has reported the incident to Austria's cyber security office and data protection authority, and has not said who was behind it.",
-  "why": "If an outside firm runs your website, ask them this week who can log in to it, whether those logins use two-step verification, and how quickly they would tell you about a breach.",
-  "src": "Security Affairs",
-  "url": "https://securityaffairs.com/203680/hacking/cyberattack-on-austrian-foreign-ministry-exposes-diplomatic-staff-data.html"
  },
  {
   "region": "Global",
@@ -1327,24 +1348,6 @@ var NEWS=[
   "url": "https://www.yahoo.com/news/world/articles/tens-thousands-uk-fridges-secured-000211626.html"
  },
  {
-  "region": "UK",
-  "date": "20 Nov 2026",
-  "title": "UK military chief confirms offensive cyber operations against Russia, China, Iran and North Korea",
-  "body": "General Sir Rob Magowan, who heads the armed forces' cyber command, told Sky News the National Cyber Force is carrying out offensive operations against the four states. He gave no detail on targets or results. The force, run jointly by GCHQ and the Ministry of Defence, opened a new headquarters in Lancashire this week, and the NCSC logged 1,831 cyber attack reports in the past year, 80 of them nationally significant.",
-  "why": "State-backed groups often hit suppliers to get at bigger targets, so check this week that every remote access login your business uses has two-step verification switched on.",
-  "src": "Daily Mirror via AOL",
-  "url": "https://www.aol.co.uk/articles/britain-conducting-offensive-cyber-operations-111206000.html"
- },
- {
-  "region": "Americas",
-  "date": "20 Nov 2026",
-  "title": "FBI investigates an apparent breach of its national crime database",
-  "body": "CNN reports, citing two people briefed on the investigation, that the FBI is looking into an apparent hack of the National Crime Information Center. Police across the US use this database to check warrants and run background checks. It is not yet clear what data was reached, the FBI has not commented, and it would be the bureau's second breach in recent months.",
-  "why": "Review who can reach your most sensitive records this week, and remove access for anyone who no longer needs it.",
-  "src": "CNN via Yahoo News",
-  "url": "https://www.yahoo.com/news/us/articles/fbi-hacked-again-time-breach-022312420.html"
- },
- {
   "region": "Nigeria",
   "date": "18 Nov 2026",
   "title": "CBN directors warn Nigerian banks about the risks of AI tools",
@@ -1352,6 +1355,15 @@ var NEWS=[
   "why": "Agree a rule this week that no payment goes out on an urgent email or call alone, and confirm requests by phoning a number you already have.",
   "src": "BusinessDay",
   "url": "https://businessday.ng/news/article/ai-agents-pose-new-risks-to-nigerian-banks-cbn-warns/"
+ },
+ {
+  "region": "Global",
+  "date": "10 Nov 2026",
+  "title": "Attackers use a login bypass in Xen Orchestra to take over virtual machine servers",
+  "body": "Vates warns that a critical flaw in Xen Orchestra, the web console used to manage XCP-ng virtual machine hosts, is being used in attacks. It lets outsiders get in without a password and has no CVE number yet, only the advisory ID VSA-2026-062. Fixes are in Xen Orchestra 6.9.1 and 6.10.0, and a second flaw (VSA-2026-063) is still waiting for a patch.",
+  "why": "If you run Xen Orchestra, update it now, keep the console off the internet, and change its passwords if it was ever exposed.",
+  "src": "BleepingComputer",
+  "url": "https://www.bleepingcomputer.com/news/security/critical-xen-orchestra-auth-bypass-flaw-exploited-to-hijack-vm-servers/"
  },
  {
   "region": "Nigeria",
