@@ -782,7 +782,7 @@ var SOCIAL={linkedin:"",x:"",instagram:""};
 var CLIENTS=[];
 
 /* DATA:START */
-var UPDATED="23 Nov 2026, 13:28";
+var UPDATED="23 Nov 2026, 16:25";
 var VULNS=[
  {
   "id": "CVE-2026-131914",
@@ -1279,6 +1279,15 @@ var VULNS=[
 ];
 var NEWS=[
  {
+  "region": "Europe",
+  "date": "23 Nov 2026",
+  "title": "Attackers used an Azure API Management weakness to reach secrets at Norwegian energy firms",
+  "body": "Azure API Management is Microsoft's cloud service for publishing and protecting company APIs. Norway's National Security Authority says an unknown attacker used a weakness in Classic tier setups to go after tokens, secrets and named values at several organisations, including Equinor and Skagerak Energi. Microsoft says it closed the access path on 19 November, and the newer v2 tiers were not affected.",
+  "why": "If you run Azure API Management on a Classic tier, replace its stored secrets, keys and tokens this week and check it follows Microsoft's security guidance.",
+  "src": "SecurityWeek",
+  "url": "https://www.securityweek.com/azure-flaw-exploited-to-target-secrets-at-norwegian-energy-firms/"
+ },
+ {
   "region": "Global",
   "date": "23 Nov 2026",
   "title": "N-able says an intruder got into a server behind its Mail Assure email filtering service",
@@ -1349,15 +1358,6 @@ var NEWS=[
   "why": "Check this week that any status page or admin dashboard your business runs needs a login and is not open to the whole internet, and change any passwords stored on it.",
   "src": "TechRadar",
   "url": "https://www.techradar.com/pro/japanese-supercomputer-hit-by-suspected-cyberattack-fugaku-facility-was-apparently-lacking-in-some-essential-security-protection"
- },
- {
-  "region": "Global",
-  "date": "20 Nov 2026",
-  "title": "GL.iNet says attackers used a flaw in its cloud service to plant malware on some routers and KVM devices",
-  "body": "GL.iNet, which makes travel routers and remote-access KVM boxes, says an outsider used a flaw in its GoodCloud remote management service to install malicious software on some of its devices. The cloud flaw is now fixed, but that does not clean devices already infected, and the company is still checking whether computers plugged into affected KVMs were reached. No CVE number has been issued.",
-  "why": "If you use GL.iNet kit with cloud management turned on, follow the check in GL.iNet's notice this week, factory reset any device that shows the warning sign, and install the security firmware due from 22 Nov (KVM betas 1.10.2, or 1.8.6 for the RMQ1, are out now).",
-  "src": "GL.iNet security notice",
-  "url": "https://www.gl-inet.com/blogs/blog/glinet-security-notice-2026-11-20"
  },
  {
   "region": "UK",
