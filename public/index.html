@@ -782,7 +782,7 @@ var SOCIAL={linkedin:"",x:"",instagram:""};
 var CLIENTS=[];
 
 /* DATA:START */
-var UPDATED="23 Nov 2026, 12:31";
+var UPDATED="23 Nov 2026, 13:28";
 var VULNS=[
  {
   "id": "CVE-2026-131914",
@@ -1157,6 +1157,18 @@ var VULNS=[
   "url": "https://www.bleepingcomputer.com/news/security/zyxel-fixes-zero-day-exploited-to-hack-nearly-1-000-network-switches/"
  },
  {
+  "id": "CVE-2026-58115",
+  "sev": "critical",
+  "score": "10.0",
+  "product": "Siemens SIMATIC IoT2050 gateways (Advanced, Basic, M.2 and SM) with Node-RED installed, on Industrial OS before V4.3.4-1 or any Example Image",
+  "title": "Siemens IoT2050 gateway flaw lets attackers run code through Node-RED without a password",
+  "what": "The IoT2050 is a small Siemens box that links factory and building equipment to office IT, and Node-RED is the visual tool used to build its automations. Its Node-RED web interface does not ask for a login, so anyone who can reach it can add a flow that runs commands with full rights. VulnCheck saw this used on 30 October to install a Linux bot, followed by more attacks that left web shells behind.",
+  "fix": "Update Industrial OS to V4.3.4-1 or later. Example Image builds have no fix, so move those devices to Industrial OS, keep Node-RED off the internet and turn on its admin login.",
+  "added": "1 Nov 2026",
+  "src": "SecurityWeek",
+  "url": "https://www.securityweek.com/critical-node-red-flaw-exploited-in-attacks/"
+ },
+ {
   "id": "CVE-2026-111357",
   "sev": "high",
   "score": null,
@@ -1267,6 +1279,15 @@ var VULNS=[
 ];
 var NEWS=[
  {
+  "region": "Global",
+  "date": "23 Nov 2026",
+  "title": "N-able says an intruder got into a server behind its Mail Assure email filtering service",
+  "body": "Mail Assure and SpamExperts Hosted Cloud filter spam for IT support firms and their clients. N-able says an outsider accessed one of its hosted servers, which led to a dashboard and API outage from 16 November, and it has now patched a serious flaw in the service, CVE-2026-134624, without saying whether that was the way in. Email kept flowing, and N-able says it has found no sign that customer data or mailboxes were reached.",
+  "why": "If your IT provider uses Mail Assure or SpamExperts, ask them this week to confirm they have replaced the API and OAuth tokens N-able revoked, and to tell you what their review found.",
+  "src": "The Hacker News",
+  "url": "https://thehackernews.com/2026/11/n-able-discloses-critical-mail-assure.html"
+ },
+ {
   "region": "Asia-Pacific",
   "date": "23 Nov 2026",
   "title": "South Korea's state power company says hackers stole data on about 1.5 million people",
@@ -1355,15 +1376,6 @@ var NEWS=[
   "why": "Agree a rule this week that no payment goes out on an urgent email or call alone, and confirm requests by phoning a number you already have.",
   "src": "BusinessDay",
   "url": "https://businessday.ng/news/article/ai-agents-pose-new-risks-to-nigerian-banks-cbn-warns/"
- },
- {
-  "region": "Global",
-  "date": "10 Nov 2026",
-  "title": "Attackers use a login bypass in Xen Orchestra to take over virtual machine servers",
-  "body": "Vates warns that a critical flaw in Xen Orchestra, the web console used to manage XCP-ng virtual machine hosts, is being used in attacks. It lets outsiders get in without a password and has no CVE number yet, only the advisory ID VSA-2026-062. Fixes are in Xen Orchestra 6.9.1 and 6.10.0, and a second flaw (VSA-2026-063) is still waiting for a patch.",
-  "why": "If you run Xen Orchestra, update it now, keep the console off the internet, and change its passwords if it was ever exposed.",
-  "src": "BleepingComputer",
-  "url": "https://www.bleepingcomputer.com/news/security/critical-xen-orchestra-auth-bypass-flaw-exploited-to-hijack-vm-servers/"
  },
  {
   "region": "Nigeria",
