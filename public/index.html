@@ -782,8 +782,20 @@ var SOCIAL={linkedin:"",x:"",instagram:""};
 var CLIENTS=[];
 
 /* DATA:START */
-var UPDATED="23 Nov 2026, 23:26";
+var UPDATED="24 Nov 2026, 06:26";
 var VULNS=[
+ {
+  "id": "CVE-2026-134624",
+  "sev": "critical",
+  "score": "9.3",
+  "product": "N-able Mail Assure (also sold as SpamExperts), a cloud email filtering service many IT support firms run for their clients, before build 20261121.1943",
+  "title": "Flaw in N-able's Mail Assure email filter lets a logged-in API user probe and reach internal systems",
+  "what": "A connection test used for LDAP directory syncing does not limit where it connects. Anyone with API access can use the server to scan internal hosts and send crafted data to internal services. CISA says it is being exploited and has added it to its KEV list.",
+  "fix": "N-able fixed the hosted service in build 20261121.1943. Ask your IT provider to confirm they have followed N-able's security advisory for this flaw.",
+  "added": "23 Nov 2026",
+  "src": "NVD (NIST)",
+  "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134624"
+ },
  {
   "id": "CVE-2026-131914",
   "sev": "critical",
