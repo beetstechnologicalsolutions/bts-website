@@ -782,8 +782,20 @@ var SOCIAL={linkedin:"",x:"",instagram:""};
 var CLIENTS=[];
 
 /* DATA:START */
-var UPDATED="24 Nov 2026, 11:25";
+var UPDATED="24 Nov 2026, 15:25";
 var VULNS=[
+ {
+  "id": "CVE-2026-133469",
+  "sev": "critical",
+  "score": "9.8",
+  "product": "Vates Xen Orchestra (XO), a web console for managing XCP-ng and XenServer virtual machine hosts, before 6.9.2 and 6.10.1, including the Xen Orchestra Appliance",
+  "title": "Login bypass in Xen Orchestra is being used to take over virtual machine hosts",
+  "what": "A flaw in how XO checks login tokens lets an attacker with no account sign in as an existing user, often an administrator. Vates says one attacker has used it with a second, still unpatched flaw to take full control of XCP-ng hosts. These logins do not show up in XO's logs.",
+  "fix": "Update to Xen Orchestra 6.9.2 or 6.10.1 (xo-server 5.211.2 or 5.213.1 on the older line), keep XO off the internet, and change every password and token it holds.",
+  "added": "23 Nov 2026",
+  "src": "SecurityWeek",
+  "url": "https://www.securityweek.com/critical-xen-orchestra-flaws-exploited-in-attacks/"
+ },
  {
   "id": "CVE-2026-134624",
   "sev": "critical",
@@ -1291,6 +1303,15 @@ var VULNS=[
 ];
 var NEWS=[
  {
+  "region": "UK",
+  "date": "24 Nov 2026",
+  "title": "School software firm Bromcom says an old login component exposed 355,000 email addresses",
+  "body": "Bromcom, whose school management software is used by more than 5,000 UK schools, says attackers got in through an old single sign-on component that was still running. They pulled out staff and pupil email addresses and sign-on reference numbers, and Have I Been Pwned lists 355,051 unique addresses. Bromcom says no passwords were taken, it has removed the component, and schools must decide whether to tell the ICO.",
+  "why": "If you supply or work with schools, warn staff to expect phishing and to reject any password reset or sign-in approval they did not ask for.",
+  "src": "The Register",
+  "url": "https://www.theregister.com/cyber-crime/2026/11/24/education-software-suppliers-legacy-login-system-left-355000-school-email-addresses-exposed/5311622"
+ },
+ {
   "region": "Global",
   "date": "24 Nov 2026",
   "title": "Check Point counts a record 2,830 ransomware victims named on leak sites last quarter",
@@ -1370,15 +1391,6 @@ var NEWS=[
   "why": "List the outside firms that hold your business or customer data this week, and ask each one how and how fast they would tell you about a breach.",
   "src": "PA Media via The Irish News",
   "url": "https://www.irishnews.com/news/uk/next-says-some-data-accessed-in-cyber-incident-affecting-online-supplier-KT3N7DH7JJKEVONRGL7NPUVOGY/"
- },
- {
-  "region": "UK",
-  "date": "20 Nov 2026",
-  "title": "TfL says hackers reached details of about 265,000 Oyster photocard holders",
-  "body": "Transport for London spotted suspicious activity on its Oyster photocard website on 16 November and took the system offline. Email addresses, phone numbers, home addresses, dates of birth and security questions and answers were exposed, including for Zip and 60+ card holders. TfL says passwords and payment details were not taken, and it has told the ICO.",
-  "why": "Expect phishing that mentions TfL or Oyster cards, and remind staff that a security question answer used on any other account should be changed now.",
-  "src": "Help Net Security",
-  "url": "https://www.helpnetsecurity.com/2026/11/20/transport-for-london-oyster-photocard-data-breach/"
  },
  {
   "region": "Nigeria",
