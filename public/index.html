@@ -782,7 +782,7 @@ var SOCIAL={linkedin:"",x:"",instagram:""};
 var CLIENTS=[];
 
 /* DATA:START */
-var UPDATED="24 Nov 2026, 18:25";
+var UPDATED="24 Nov 2026, 20:25";
 var VULNS=[
  {
   "id": "CVE-2026-133469",
@@ -819,6 +819,18 @@ var VULNS=[
   "added": "23 Nov 2026",
   "src": "The Hacker News",
   "url": "https://thehackernews.com/2026/11/hackers-exploit-critical-aspnet-anti.html"
+ },
+ {
+  "id": "CVE-2026-132165",
+  "sev": "critical",
+  "score": null,
+  "product": "Drupal core, the open-source system behind many business and public sector websites, before 10.6.22, 11.3.22 and 11.4.13",
+  "title": "Drupal installer flaw is being used to take over live websites",
+  "what": "Under certain conditions, someone with no login can run Drupal's installer page (install.php) on a site that is already set up and reinstall it. That gives them control of the site and can let them run their own code on the server. Drupal says it has reports of attacks on live sites since 19 November.",
+  "fix": "Update to Drupal 10.6.22, 11.3.22 or 11.4.13. If you can't update yet, block access to /core/install.php in your web server settings. Older 10.5 and 11.2 releases get no fix.",
+  "added": "21 Nov 2026",
+  "src": "Drupal Security Team",
+  "url": "https://www.drupal.org/sa-core-2026-017"
  },
  {
   "id": "CVE-2026-133968",
@@ -987,6 +999,18 @@ var VULNS=[
   "added": "17 Nov 2026",
   "src": "CSA Singapore alert",
   "url": "https://www.csa.gov.sg/alerts-and-advisories/alerts/al-2026-164/"
+ },
+ {
+  "id": "CVE-2026-132224",
+  "sev": "high",
+  "score": "7.1",
+  "product": "Optimizely Web Experimentation, a cloud service websites use to run A/B tests by loading Optimizely's script on their pages",
+  "title": "Attackers planted card-skimming code on big-brand websites through Optimizely",
+  "what": "A flaw in Optimizely's account signup let an attacker pose as existing customer users and change the script Optimizely serves to their websites. On 16 November the script on sites including the BBC, CNN and Zoom stole card details typed into forms, swapped crypto wallet addresses and tried to attack older iPhones.",
+  "fix": "Optimizely fixed the flaw on 17 November, so there is nothing to install. Customers should check every project's Project JavaScript for code they did not write and rotate any users, tokens and integrations that can edit their account.",
+  "added": "17 Nov 2026",
+  "src": "The Hacker News",
+  "url": "https://thehackernews.com/2026/11/hijacked-optimizely-scripts-served-card.html"
  },
  {
   "id": "CVE-2026-123039",
