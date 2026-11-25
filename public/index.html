@@ -829,19 +829,43 @@ var SOCIAL={linkedin:"",x:"",instagram:""};
 var CLIENTS=[];
 
 /* DATA:START */
-var UPDATED="25 Nov 2026, 18:26";
+var UPDATED="25 Nov 2026, 23:26";
 var VULNS=[
  {
-   "id": "CVE-2026-103406",
-   "sev": "critical",
-   "score": "9.8",
-   "product": "Juniper Networks Session Smart Conductor, the console that manages Juniper Session Smart routers, before 7.0.5, 7.1.7 and 7.2.3",
-   "title": "Attackers can run commands as root on Juniper Session Smart Conductor without logging in",
-   "what": "A flaw in the Conductor's automatic device setup lets someone on the network send a specially made device ID during key exchange and run any command as root. No password is needed. CISA added it to its list of exploited flaws on 25 Nov 2026.",
-   "fix": "Update Session Smart Conductor to 7.0.5, 7.1.7, 7.2.3 or later, as set out in Juniper advisory JSA112183.",
-   "added": "25 Nov 2026",
-   "src": "NVD (NIST)",
-   "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103406"
+  "id": "CVE-2026-133323",
+  "sev": "critical",
+  "score": "10.0",
+  "product": "Mitel MiCollab up to 10.3 (10.3.0.18), a unified communications suite for office phones, chat and conferencing, also CVE-2026-133303, CVE-2026-133275, CVE-2026-133324 and CVE-2026-133311",
+  "title": "Five flaws in Mitel MiCollab's conferencing feature are under attack",
+  "what": "All five sit in the Audio, Web and Video Conferencing part of MiCollab and need no login. The worst lets an attacker run system commands, and others allow file uploads, a login bypass and data theft. CISA added all five to its exploited list on 25 Nov 2026.",
+  "fix": "Apply the update in Mitel advisory MISA-2026-0012 now. If you can't, take MiCollab's conferencing service off the internet until you can.",
+  "added": "25 Nov 2026",
+  "src": "NVD (NIST)",
+  "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133323"
+ },
+ {
+  "id": "CVE-2023-25915",
+  "sev": "critical",
+  "score": "9.9",
+  "product": "Danfoss AK-SM 800A series, a controller supermarkets use to run fridges and freezers, before firmware 3.3, also CVE-2023-25914 and CVE-2025-41450 (before 4.2)",
+  "title": "Attackers are using old flaws in Danfoss supermarket fridge controllers",
+  "what": "Someone with a login can run commands on the controller or read its system files, which can lead to full control. A third flaw needs no login and leaks internal IP addresses, usernames and store names. CISA added all three to its exploited list on 25 Nov 2026.",
+  "fix": "Update the controller firmware to 4.2 or later, following Danfoss advisories DSA-2023-08-01 and DSA-2025-03-01, and keep it off the open internet.",
+  "added": "25 Nov 2026",
+  "src": "NVD (NIST)",
+  "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-25915"
+ },
+ {
+  "id": "CVE-2026-103406",
+  "sev": "critical",
+  "score": "9.8",
+  "product": "Juniper Networks Session Smart Conductor, the console that manages Juniper Session Smart routers, before 7.0.5, 7.1.7 and 7.2.3",
+  "title": "Attackers can run commands as root on Juniper Session Smart Conductor without logging in",
+  "what": "A flaw in the Conductor's automatic device setup lets someone on the network send a specially made device ID during key exchange and run any command as root. No password is needed. CISA added it to its list of exploited flaws on 25 Nov 2026.",
+  "fix": "Update Session Smart Conductor to 7.0.5, 7.1.7, 7.2.3 or later, as set out in Juniper advisory JSA112183.",
+  "added": "25 Nov 2026",
+  "src": "NVD (NIST)",
+  "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103406"
  },
  {
   "id": "CVE-2026-133335",
@@ -967,10 +991,10 @@ var VULNS=[
   "id": "CVE-2026-123890",
   "sev": "critical",
   "score": "9.8",
-  "product": "VMware vCenter Server 9.1, 9.0, 8.0 and 5.x, plus VMware Telco Cloud Platform and Telco Cloud Infrastructure",
+  "product": "VMware vCenter Server 9.1, 9.0, 8.0 and 5.x, plus Telco Cloud Platform and Telco Cloud Infrastructure, also CVE-2026-41709 in VMware ESX (ESXi) 8.0 and 9.x and VMware Cloud Foundation",
   "title": "China-linked spies used a vCenter login bypass for over two months before a patch arrived",
-  "what": "vCenter is the console companies use to run their VMware virtual servers. A flaw in its directory service lets an attacker with network access and no password get an administrator session. Google says a China-linked group used it as a zero-day, then forged logins, planted backdoors and moved on to ESXi hosts.",
-  "fix": "Update to vCenter 9.1.1.0200, 9.0.2.0200, 8.0 U3m or 5.2.5. There is no public fix for unsupported 7.0, so plan to move off it and check vCenter for SSO admin accounts you don't recognise.",
+  "what": "vCenter is the console companies use to run their VMware virtual servers. A flaw in its directory service lets an attacker with network access and no password get an administrator session. Google says a China-linked group used it as a zero-day, then forged logins, planted backdoors and moved on to ESXi hosts. A separate ESXi flaw, CVE-2026-41709, lets someone with admin access act without being logged, and CrowdStrike says a China-linked group used it too.",
+  "fix": "Update to vCenter 9.1.1.0200, 9.0.2.0200, 8.0 U3m or 5.2.5, and apply Broadcom's July 2026 ESXi updates. There is no public fix for unsupported 7.0, so plan to move off it and check for SSO admin accounts you don't recognise.",
   "added": "19 Nov 2026",
   "src": "SecurityWeek",
   "url": "https://www.securityweek.com/newly-patched-vmware-vcenter-flaw-exploited-as-zero-day-by-chinese-apt/"
@@ -1360,18 +1384,6 @@ var VULNS=[
   "url": "https://thehackernews.com/2026/10/cisa-adds-actively-exploited-gitlab-rce.html"
  },
  {
-  "id": "CVE-2026-41709",
-  "sev": "medium",
-  "score": "2.7",
-  "product": "VMware ESX (ESXi) 8.0 and 9.x, and VMware Cloud Foundation",
-  "title": "VMware ESXi flaw lets an attacker with admin access act without leaving logs",
-  "what": "Someone who already has admin access to an ESXi host can carry out some actions without them being logged, which hides their tracks. CrowdStrike says the China-linked group Warp Panda used it in early 2026.",
-  "fix": "Apply Broadcom's July 2026 ESXi updates. Make sure ESXi logs are also sent to a separate log server.",
-  "added": "28 Oct 2026",
-  "src": "Security Affairs",
-  "url": "https://securityaffairs.com/202050/hacking/u-s-cisa-adds-linux-kernel-and-broadcom-vmware-esx-flaws-to-its-known-exploited-vulnerabilities-catalog.html"
- },
- {
   "id": "CVE-2026-46300",
   "sev": "high",
   "score": "7.8",
@@ -1422,6 +1434,24 @@ var VULNS=[
 ];
 var NEWS=[
  {
+  "region": "Global",
+  "date": "25 Nov 2026",
+  "title": "Retailers face more ransomware in November, and most small shops have no cyber insurance",
+  "body": "Insurer CFC's claims data shows ransomware hits retail, leisure and hospitality firms 50% more often in November than in an average month. Reuters reports that only 43% of small and medium retailers carry cyber insurance. PwC expects UK shoppers to spend about 235 pounds each this Black Friday.",
+  "why": "Before the weekend rush, check you have an offline backup of your shop and order data and that staff know who to call if tills or the website stop.",
+  "src": "Reuters via Investing.com",
+  "url": "https://www.investing.com/news/stock-market-news/retailers-face-rising-ai-cyberattack-threat-ahead-of-black-friday-many-uninsured-5050150"
+ },
+ {
+  "region": "UK",
+  "date": "25 Nov 2026",
+  "title": "Halfords hit through a third-party service, with extortion gang N0n claiming it",
+  "body": "The bike and car parts retailer says an attack late last week on an outside digital service exposed limited product information and some staff usernames. Halfords says it has found no sign that passwords, payment details or customer data were involved, or that its own systems were reached. The N0n data theft group has claimed the attack.",
+  "why": "List the outside services that hold your staff or product data and check each one has multi-factor login turned on for your accounts.",
+  "src": "Cyclingnews via Yahoo",
+  "url": "https://www.yahoo.com/lifestyle/articles/british-bike-retail-chain-halfords-113338105.html"
+ },
+ {
   "region": "Americas",
   "date": "25 Nov 2026",
   "title": "US financial crime agency FinCEN takes systems offline after a break-in",
@@ -1431,6 +1461,15 @@ var NEWS=[
   "url": "https://www.yahoo.com/news/us/articles/us-fincen-takes-systems-offline-144239506.html"
  },
  {
+  "region": "Europe",
+  "date": "24 Nov 2026",
+  "title": "Microsoft fixes an Azure API Management flaw used against Norwegian energy firms",
+  "body": "Microsoft says a flaw in the Classic Developer, Basic, Standard and Premium tiers of Azure API Management, its service for publishing company APIs, was exploited before it blocked it on 19 November. Norway's security authority says an unknown attacker went after access tokens, secrets and stored values, and Equinor reported an attack on 17 November. There is no CVE number yet.",
+  "why": "If you use Azure API Management Classic, rotate its keys, secrets and named values now, because Microsoft's fix does not cancel credentials stolen before it.",
+  "src": "Techzine",
+  "url": "https://www.techzine.eu/news/security/146028/microsoft-patches-actively-exploited-vulnerability-in-azure-api-management/"
+ },
+ {
   "region": "UK",
   "date": "24 Nov 2026",
   "title": "UK warns firms that supply Ukraine's military of Russian sabotage",
@@ -1438,15 +1477,6 @@ var NEWS=[
   "why": "If you are anywhere in a defence supply chain, check this week what your website and staff profiles reveal about your sites and people, and remind staff how to report anything suspicious.",
   "src": "Reuters via Yahoo News",
   "url": "https://uk.news.yahoo.com/uk-warns-russian-sabotage-threat-123549976.html"
- },
- {
-  "region": "Global",
-  "date": "24 Nov 2026",
-  "title": "Radware says an exposed internal API leaked customer cloud storage keys",
-  "body": "Radware, which sells web application firewall and DDoS protection services, says an outsider reached an internal Cloud WAF management API on 19 November because it was open to the internet without a login. Customer contact details were exposed, and for some customers so were the AWS S3, Azure Blob or SFTP credentials used to export WAF logs. Some customers report AWS alerts about an unfamiliar address trying to reach their log buckets.",
-  "why": "If you use Radware Cloud WAF, rotate your log export keys and passwords this week and check your storage access logs for anything unexpected since 19 November.",
-  "src": "BleepingComputer",
-  "url": "https://www.bleepingcomputer.com/news/security/radware-discloses-breach-exposing-customer-cloud-access-keys/"
  },
  {
   "region": "UK",
@@ -1474,24 +1504,6 @@ var NEWS=[
   "why": "Check this week that your backups have an offline copy, and test restoring one important folder so you know you could recover without paying.",
   "src": "Help Net Security",
   "url": "https://www.helpnetsecurity.com/2026/11/24/check-point-ransomware-attacks-q3-2026-report/"
- },
- {
-  "region": "Global",
-  "date": "24 Nov 2026",
-  "title": "Turnitin says it found unauthorised activity on some customer-facing systems",
-  "body": "Turnitin, the plagiarism-checking service used by more than 16,000 schools and universities in 185 countries, says it spotted unauthorised activity on some of its customer-facing systems and is investigating with outside specialists. It has told police and regulators, and says its service is working normally. It has not said whether any user data was taken or how many people are affected.",
-  "why": "If your organisation uses Turnitin, warn staff and students this week to expect phishing that mentions it, and remind them not to reuse their Turnitin password anywhere else.",
-  "src": "BleepingComputer",
-  "url": "https://www.bleepingcomputer.com/news/security/turnitin-discloses-cyberattack-affecting-customer-facing-systems/"
- },
- {
-  "region": "Americas",
-  "date": "24 Nov 2026",
-  "title": "Hackers breached an unclassified US intelligence research system used by the CIA",
-  "body": "CyberScoop has confirmed a breach of an open-source intelligence analysis system used by the CIA and the Office of the Director of National Intelligence. A source says some unclassified information was exposed and that classified networks were not involved. The CIA declined to comment.",
-  "why": "Ask which research and analytics tools your staff sign in to, and check this week that each one uses multi-factor sign-in and keeps a log of searches.",
-  "src": "CyberScoop",
-  "url": "https://cyberscoop.com/cia-odni-osint-data-breach"
  },
  {
   "region": "Global",
