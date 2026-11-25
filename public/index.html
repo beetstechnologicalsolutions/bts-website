@@ -829,7 +829,7 @@ var SOCIAL={linkedin:"",x:"",instagram:""};
 var CLIENTS=[];
 
 /* DATA:START */
-var UPDATED="25 Nov 2026, 06:25";
+var UPDATED="25 Nov 2026, 07:25";
 var VULNS=[
  {
   "id": "CVE-2026-133469",
@@ -1374,6 +1374,15 @@ var VULNS=[
 ];
 var NEWS=[
  {
+  "region": "Global",
+  "date": "24 Nov 2026",
+  "title": "Radware says an exposed internal API leaked customer cloud storage keys",
+  "body": "Radware, which sells web application firewall and DDoS protection services, says an outsider reached an internal Cloud WAF management API on 19 November because it was open to the internet without a login. Customer contact details were exposed, and for some customers so were the AWS S3, Azure Blob or SFTP credentials used to export WAF logs. Some customers report AWS alerts about an unfamiliar address trying to reach their log buckets.",
+  "why": "If you use Radware Cloud WAF, rotate your log export keys and passwords this week and check your storage access logs for anything unexpected since 19 November.",
+  "src": "BleepingComputer",
+  "url": "https://www.bleepingcomputer.com/news/security/radware-discloses-breach-exposing-customer-cloud-access-keys/"
+ },
+ {
   "region": "UK",
   "date": "24 Nov 2026",
   "title": "NCSC says attackers are using automated hacking tools to hit old, simple weaknesses",
@@ -1421,11 +1430,11 @@ var NEWS=[
  {
   "region": "Global",
   "date": "23 Nov 2026",
-  "title": "Microsoft says a flaw in Entra Connect Health let outsiders read customer tenant details",
-  "body": "Microsoft is telling customers that a bug in the API behind Entra Connect Health, its service for monitoring the link between office servers and Microsoft 365 sign-ins, gave someone read-only access to tenant information. The exposed details include administrator email addresses, tenant IDs, domain names and sync status. Microsoft says it fixed the bug on 19 November and found no passwords, tokens or settings changes.",
-  "why": "Warn your Microsoft 365 admins to expect targeted phishing this week, and make sure every admin account uses phishing-resistant multi-factor sign-in.",
-  "src": "Security Affairs",
-  "url": "https://securityaffairs.com/203820/data-breach/microsoft-entra-connect-health-breach-exposes-tenant-metadata-and-admin-details.html"
+  "title": "Attackers used GL.iNet's cloud service to plant malware on routers and remote-access KVMs",
+  "body": "GL.iNet, which makes small travel routers and KVM boxes for controlling computers remotely, found on 20 November that attackers had abused a flaw in its GoodCloud remote management service to run malware on connected devices. The cloud side is fixed, but infected devices stay infected until updated, and there is no CVE number yet. A GL.iNet partner also found an older backdoor on dozens of routers it manages.",
+  "why": "If you own a GL.iNet router or KVM, install the latest security firmware (for example 4.11.1 for the GL-MT3000 and GL-MT6000, 1.10.3 for most RM KVMs), turn off GoodCloud if you do not need it, and change any passwords or VPN keys stored on the device.",
+  "src": "The Hacker News",
+  "url": "https://thehackernews.com/2026/11/hackers-exploited-glinet-cloud-flaw-to.html"
  },
  {
   "region": "Europe",
@@ -1444,15 +1453,6 @@ var NEWS=[
   "why": "Ask your main suppliers and portals which of your staff contact details they hold, and warn those staff to expect convincing invoice or payment-change emails this month.",
   "src": "Korea JoongAng Daily",
   "url": "https://www.koreajoongangdaily.com/business/kepco-data-breach-exposes-personal-information-of-15-million-users/12985064"
- },
- {
-  "region": "Europe",
-  "date": "23 Nov 2026",
-  "title": "European Commission still fighting an intrusion first spotted a month ago",
-  "body": "Euronews reports that attackers found in the Commission's internal networks on 22 October have not been fully removed. The EU Academy learning site was taken offline on Saturday, and the Commission has confirmed that names and email addresses of its users leaked. Unnamed sources say a China-backed group is suspected, which the Commission has not confirmed.",
-  "why": "If you or your staff have an EU Academy account, expect phishing emails that use your name, and do not click links in unexpected messages about the account.",
-  "src": "Euronews",
-  "url": "https://www.euronews.com/2026/11/23/exclusive-china-backed-hackers-suspected-behind-ongoing-eu-commission-cyberattack"
  },
  {
   "region": "UK",
