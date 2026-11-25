@@ -829,8 +829,20 @@ var SOCIAL={linkedin:"",x:"",instagram:""};
 var CLIENTS=[];
 
 /* DATA:START */
-var UPDATED="25 Nov 2026, 10:25";
+var UPDATED="25 Nov 2026, 13:27";
 var VULNS=[
+ {
+  "id": "CVE-2026-133335",
+  "sev": "critical",
+  "score": "9.2",
+  "product": "VirtueMart 4.0.0 to 4.8.7, a free online shop add-on for Joomla websites",
+  "title": "File inclusion flaw in VirtueMart shops is being used to run code on web servers",
+  "what": "VirtueMart passes part of a web request straight into the name of a file it loads, so an attacker with no account can make it load other PHP files on the server. On some server setups that can be turned into running the attacker's own code. The official CVE record says it has been exploited in the wild.",
+  "fix": "Update VirtueMart to 4.8.10, which includes the 4.8.8 fix for this flaw and also closes a separate bug that let shoppers mark unpaid PayPal orders as paid. Hotfixes are offered for older versions.",
+  "added": "25 Nov 2026",
+  "src": "VirtueMart security notice",
+  "url": "https://virtuemart.net/news/important-security-fix-4-8-10-update-directly-hotfixes-provided"
+ },
  {
   "id": "CVE-2026-133469",
   "sev": "critical",
