@@ -829,7 +829,7 @@ var SOCIAL={linkedin:"",x:"",instagram:""};
 var CLIENTS=[];
 
 /* DATA:START */
-var UPDATED="25 Nov 2026, 07:25";
+var UPDATED="25 Nov 2026, 09:27";
 var VULNS=[
  {
   "id": "CVE-2026-133469",
@@ -1327,13 +1327,13 @@ var VULNS=[
   "id": "CVE-2026-46300",
   "sev": "high",
   "score": "7.8",
-  "product": "Linux kernel (many distributions)",
+  "product": "Linux kernel (many distributions), and Palo Alto Networks PAN-OS firewalls",
   "title": "Linux kernel flaw, known as Fragnesia, gives local users root",
-  "what": "A bug in how the kernel handles some network data lets a local user change read-only files in memory and become root. CISA says attackers have chained it with the PHP2Shell flaws to plant web shells and run commands as root.",
-  "fix": "Install your Linux distribution's latest kernel update and reboot. Fixed stable kernels include 6.6.141, 6.1.174, 5.15.208 and 5.10.257.",
+  "what": "A bug in how the kernel handles some network data lets a local user change read-only files in memory and become root. Attackers have chained it with the PHP2Shell flaws to get root on servers, Palo Alto confirms the chain was used against PAN-OS firewalls whose management page faced the internet, and a China-linked group hit 25 devices this way.",
+  "fix": "Install your Linux distribution's latest kernel update and reboot (fixed stable kernels include 6.6.141, 6.1.174, 5.15.208 and 5.10.257). On Palo Alto firewalls, install the PAN-OS hotfix for your branch, such as 12.2.4-h3, 11.2.16-h3, 11.1.16-h6 or 10.2.18-h15, and keep the management page off the internet.",
   "added": "28 Oct 2026",
-  "src": "Security Affairs",
-  "url": "https://securityaffairs.com/202050/hacking/u-s-cisa-adds-linux-kernel-and-broadcom-vmware-esx-flaws-to-its-known-exploited-vulnerabilities-catalog.html"
+  "src": "SecurityWeek",
+  "url": "https://www.securityweek.com/palo-alto-networks-patches-fragnesia-flaw-used-to-root-firewalls/"
  },
  {
   "id": "CVE-2026-111497",
@@ -1429,6 +1429,15 @@ var NEWS=[
  },
  {
   "region": "Global",
+  "date": "24 Nov 2026",
+  "title": "Hackers broke into Check Point management servers at 22 organisations, including in the UK",
+  "body": "GreyNoise, a threat intelligence firm, says one group took data from 24 Check Point Security Management servers, the consoles that control company firewalls. Victims include energy, finance, government and manufacturing firms in the UK, US, Europe and Asia. The group tried known flaws in Citrix, Ivanti, Windows and Check Point products and appears to have kept access after it was last seen on 2 November.",
+  "why": "If you run Check Point firewalls, ask your IT provider this week to confirm the management server is fully patched, reachable only from your own network, and checked for unknown admin sessions.",
+  "src": "SecurityWeek",
+  "url": "https://www.securityweek.com/check-point-security-management-servers-hacked-in-ai-assisted-campaign/"
+ },
+ {
+  "region": "Global",
   "date": "23 Nov 2026",
   "title": "Attackers used GL.iNet's cloud service to plant malware on routers and remote-access KVMs",
   "body": "GL.iNet, which makes small travel routers and KVM boxes for controlling computers remotely, found on 20 November that attackers had abused a flaw in its GoodCloud remote management service to run malware on connected devices. The cloud side is fixed, but infected devices stay infected until updated, and there is no CVE number yet. A GL.iNet partner also found an older backdoor on dozens of routers it manages.",
@@ -1444,15 +1453,6 @@ var NEWS=[
   "why": "If you run Azure API Management on a Classic tier, replace its stored secrets, keys and tokens this week and check it follows Microsoft's security guidance.",
   "src": "SecurityWeek",
   "url": "https://www.securityweek.com/azure-flaw-exploited-to-target-secrets-at-norwegian-energy-firms/"
- },
- {
-  "region": "Asia-Pacific",
-  "date": "23 Nov 2026",
-  "title": "South Korea's state power company says hackers stole data on about 1.5 million people",
-  "body": "Korea Electric Power Corp. (Kepco) says an outside attacker got into its customer platform and its supplier procurement system and took data. Customer records included names, national ID numbers, bank and card details and billing history, and the supplier system held contact details for company representatives and staff. Kepco has blocked the attacker and is investigating with South Korea's intelligence service.",
-  "why": "Ask your main suppliers and portals which of your staff contact details they hold, and warn those staff to expect convincing invoice or payment-change emails this month.",
-  "src": "Korea JoongAng Daily",
-  "url": "https://www.koreajoongangdaily.com/business/kepco-data-breach-exposes-personal-information-of-15-million-users/12985064"
  },
  {
   "region": "UK",
