@@ -829,7 +829,7 @@ var SOCIAL={linkedin:"",x:"",instagram:""};
 var CLIENTS=[];
 
 /* DATA:START */
-var UPDATED="25 Nov 2026, 15:25";
+var UPDATED="25 Nov 2026, 17:21";
 var VULNS=[
  {
   "id": "CVE-2026-133335",
@@ -854,6 +854,18 @@ var VULNS=[
   "added": "25 Nov 2026",
   "src": "The Hacker News",
   "url": "https://thehackernews.com/2026/11/hackers-exploit-two-geoserver-flaws-as.html"
+ },
+ {
+  "id": "CVE-2026-129514",
+  "sev": "critical",
+  "score": "10.0",
+  "product": "Hex.pm, the package registry Elixir and Erlang developers download code libraries from (hexpm server code before commit 379b0a2)",
+  "title": "Hex.pm package registry hacked through a flaw that needed no login",
+  "what": "A flaw in how the registry read one type of web request let anyone with no account run commands on its servers. On 23 November an attacker used it on six Hex.pm production servers for about 13 minutes before the fix went in. Hex.pm found no sign that any package was changed, but cannot rule out that account data such as email addresses, password hashes and 2FA secrets was read.",
+  "fix": "Hex.pm patched its servers on 23 November, so there is nothing to install for the flaw itself. If your developers have Hex.pm accounts, change the password, reset 2FA, log the Hex client back in, and install the new Hex client when it ships.",
+  "added": "23 Nov 2026",
+  "src": "The Hacker News",
+  "url": "https://thehackernews.com/2026/11/hackers-exploited-cvss-100-hexpm-rce.html"
  },
  {
   "id": "CVE-2026-133469",
