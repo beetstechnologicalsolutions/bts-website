@@ -829,8 +829,20 @@ var SOCIAL={linkedin:"",x:"",instagram:""};
 var CLIENTS=[];
 
 /* DATA:START */
-var UPDATED="25 Nov 2026, 17:21";
+var UPDATED="25 Nov 2026, 18:26";
 var VULNS=[
+ {
+   "id": "CVE-2026-103406",
+   "sev": "critical",
+   "score": "9.8",
+   "product": "Juniper Networks Session Smart Conductor, the console that manages Juniper Session Smart routers, before 7.0.5, 7.1.7 and 7.2.3",
+   "title": "Attackers can run commands as root on Juniper Session Smart Conductor without logging in",
+   "what": "A flaw in the Conductor's automatic device setup lets someone on the network send a specially made device ID during key exchange and run any command as root. No password is needed. CISA added it to its list of exploited flaws on 25 Nov 2026.",
+   "fix": "Update Session Smart Conductor to 7.0.5, 7.1.7, 7.2.3 or later, as set out in Juniper advisory JSA112183.",
+   "added": "25 Nov 2026",
+   "src": "NVD (NIST)",
+   "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103406"
+ },
  {
   "id": "CVE-2026-133335",
   "sev": "critical",
