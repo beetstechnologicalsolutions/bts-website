@@ -7,7 +7,8 @@ The website for BTS (Beets Technological Solutions). It is a single HTML page wi
 | Path | What it is |
 |---|---|
 | `public/index.html` | The whole website |
-| `public/favicon.svg` | The BTS radar shield, used as the browser tab icon |
+| `public/favicon.svg` | The BTS logo mark (pink B-T-S monogram on navy), used as the browser tab icon |
+| `public/apple-touch-icon.png` | The same mark as a 180 px icon for iPhone and iPad home screens |
 | `tests/` | The security checks that run before every deploy |
 | `tests/fingerprint.json` | The approved fingerprint of the design (everything except the news and vulnerability data) |
 | `vercel.json` | Vercel settings: runs the checks, publishes `public/`, and adds security headers |

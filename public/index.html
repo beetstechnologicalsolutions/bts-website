@@ -7,6 +7,7 @@
 <meta name="description" content="BTS (Beets Technological Solutions): cybersecurity training and advisory for organisations in the UK and Nigeria, with a live feed of exploited vulnerabilities and world cyber news.">
 <meta name="theme-color" content="#14213D">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600;700;800;900&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -16,7 +17,7 @@
 :root{
   --bg:#F6F7F9; --panel:#FFFFFF; --panel-2:#F0F2F6; --line:#DCE1E9; --ink:#172033; --muted:#566074;
   --beet:#8E1F55; --beet-dim:#F5E5ED; --leaf:#1F6B4C; --leaf-dim:#E2F1E9; --amber:#8A5A0B; --amber-dim:#FBEFD6; --red:#B42323; --red-dim:#FBE4E4;
-  --band:#14213D; --band-2:#1C2C4F; --on-band:#F3F5FA; --on-band-muted:#AEB8CE; --on-beet:#FFFFFF;
+  --band:#14213D; --band-2:#1C2C4F; --on-band:#F3F5FA; --on-band-muted:#AEB8CE; --on-beet:#FFFFFF; --logo:#DA2A72;
   --grid:transparent;
   --display:"Libre Franklin","Segoe UI",system-ui,sans-serif;
   --body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
@@ -76,7 +77,6 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:va
 @media (max-width:640px){.status .upd-txt{display:none}}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);font-family:var(--display);font-weight:800;font-size:1.15rem;letter-spacing:.01em}
-.brand small{display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;color:var(--muted);font-weight:400;text-transform:uppercase}
 nav ul{list-style:none;margin:0;padding:0;display:flex;gap:4px;flex-wrap:wrap}
 nav a{display:block;padding:10px 11px;color:var(--ink);text-decoration:none;font-size:.95rem;font-weight:600;border-bottom:2px solid transparent;white-space:nowrap}
 nav a:hover{color:var(--beet)}
@@ -304,7 +304,6 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--beet);outline-of
 nav a .ico{display:none}
 .bar > nav{margin-left:auto}
 .bar-right{order:3}
-.brand small{white-space:nowrap}
 .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
 @media (max-width:760px){.grid.two{grid-template-columns:1fr}}
 .stat .ico{color:var(--beet);width:22px;height:22px}
@@ -339,27 +338,32 @@ footer .links{display:flex;gap:16px;flex-wrap:wrap}
 footer .links a{color:var(--on-band);text-decoration:none}
 footer .links a:hover{color:#F2A3C5}
 @media (prefers-reduced-motion:no-preference){.view{animation:fade .25s ease}@keyframes fade{from{opacity:.4}to{opacity:1}}}
-/* BTS logo */
-.brand{gap:11px}
-.brand .mark{flex:none;width:42px;height:42px}
-.brand .wm{font-family:var(--display);font-weight:900;font-size:1.75rem;line-height:1;letter-spacing:.05em;color:var(--ink)}
-.brand .wm small{margin-top:5px;line-height:1.2;letter-spacing:.03em}
-@media (min-width:1061px) and (max-width:1240px){.brand .wm small{white-space:normal;max-width:15em}.bar nav a{padding:10px 8px}}
-.foot-brand{display:inline-flex;align-items:center;gap:10px}
-.foot-brand svg{flex:none;width:30px;height:30px}
-.foot-brand b{font-family:var(--display);font-weight:900;letter-spacing:.05em;color:var(--on-band);font-size:1.15rem}
-@media (max-width:480px){.brand .mark{width:36px;height:36px}.brand .wm{font-size:1.5rem}}
+/* BTS logo: the B-T-S monogram with the Beets Technological Solutions wordmark */
+.brand{gap:10px}
+.brand .mark{flex:none;width:36px;height:42px}
+.wm{display:flex;flex-direction:column;align-items:flex-start;line-height:1;white-space:nowrap}
+.wm .l1{font-family:var(--display);font-weight:900;font-size:17px;letter-spacing:.005em;color:var(--logo)}
+.wm .l2{margin-top:5px;font-family:var(--display);font-weight:600;font-size:11px;letter-spacing:.42em;color:var(--ink)}
+.foot-brand{display:grid;gap:10px;justify-items:start}
 .foot-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;border-radius:6px}
+.foot-logo svg{flex:none;width:34px;height:40px}
+.foot-logo .l1{font-size:16.5px}
+.foot-logo .l2{font-size:10.8px;color:var(--on-band)}
+.foot-tag{font-family:var(--body);font-weight:600;color:var(--on-band)}
+@media (min-width:1061px) and (max-width:1240px){.bar nav a{padding:10px 8px}}
+@media (max-width:1060px){.brand .wm .l1{font-size:clamp(12px,calc((100vw - 293px) / 12.9),17px)}}
+@media (max-width:480px){.brand .mark{width:31px;height:36px}.brand .wm .l2{font-size:9px;letter-spacing:.32em;margin-top:4px}}
+@media (max-width:460px){.brand .wm .l1{font-size:clamp(9.5px,calc((100vw - 205px) / 12.9),17px)}}
+@media (max-width:350px){header .bar{gap:6px}header .brand{gap:7px}.brand .wm .l2{font-size:8px;letter-spacing:.3em}}
 .brand .mark,.foot-logo svg{transition:transform .2s ease,filter .2s ease}
-.brand:hover .mark,.foot-logo:hover svg{transform:scale(1.08);filter:drop-shadow(0 0 6px rgba(226,88,155,.55))}
-.foot-logo:hover b{color:#F2A3C5}
+.brand:hover .mark,.foot-logo:hover svg{transform:scale(1.06);filter:drop-shadow(0 0 6px rgba(218,42,114,.5))}
 @media (pointer:coarse),(hover:none),(max-width:1060px){.foot-logo{min-height:44px}}
 @media (prefers-reduced-motion:reduce){.brand .mark,.foot-logo svg{transition:none}.brand:hover .mark,.foot-logo:hover svg{transform:none}}
 /* Phones, tablets and touch screens */
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 a,button,input,select,textarea,label{touch-action:manipulation}
 .status{font-size:.75rem}
-.status .brk,.tick-item .k,.brand small,.console-top,.tile .tag,.pill,.story time,.facts dt,.story .why b,.stat .s,.vuln .fix b,.vuln .foot,.control .n,.console-foot,.steps .n,.course dt{font-size:.75rem}
+.status .brk,.tick-item .k,.console-top,.tile .tag,.pill,.story time,.facts dt,.story .why b,.stat .s,.vuln .fix b,.vuln .foot,.control .n,.console-foot,.steps .n,.course dt{font-size:.75rem}
 .tick-item .t{font-size:.8rem}
 .disclaimer{display:block;position:relative;padding-left:28px}
 .disclaimer::before{position:absolute;left:0;top:2px}
@@ -389,7 +393,6 @@ dialog.sub{overflow:auto}
 @media (max-width:480px){
   .bar{gap:10px}
   .brand{gap:9px;font-size:1.05rem;min-width:0}
-  .brand small{white-space:normal;letter-spacing:.06em;line-height:1.25}
   .bar-right{gap:8px;flex:none}
 }
 @media (max-height:500px) and (orientation:landscape){
@@ -465,12 +468,8 @@ dialog.sub{overflow:auto}
   </div>
   <div class="wrap bar" style="position:relative">
     <a class="brand" href="#home" aria-label="BTS, Beets Technological Solutions, home">
-      <svg class="mark" width="40" height="40" viewBox="0 0 64 64" aria-hidden="true">
-        <defs><clipPath id="bts-clip"><path d="M32 4 L55 12 V30 C55 44.5 45.5 54.5 32 60 C18.5 54.5 9 44.5 9 30 V12 Z"/></clipPath>
-          <radialGradient id="bts-sweep" cx="32" cy="33" r="24" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#E2589B" stop-opacity="0"/><stop offset="1" stop-color="#E2589B" stop-opacity=".75"/></radialGradient></defs>
-        <path d="M32 4 L55 12 V30 C55 44.5 45.5 54.5 32 60 C18.5 54.5 9 44.5 9 30 V12 Z" fill="#14213D" stroke="#B8306F" stroke-width="2.5" stroke-linejoin="round"/><g clip-path="url(#bts-clip)" fill="none" stroke="#7F93BB" stroke-width="1.6" opacity=".7"><circle cx="32" cy="33" r="7"/><circle cx="32" cy="33" r="14"/><circle cx="32" cy="33" r="21"/><path d="M32 8V58M8 33H56" opacity=".5"/></g><path d="M32 33 L32 9 A24 24 0 0 1 52.8 21 Z" fill="url(#bts-sweep)" clip-path="url(#bts-clip)"/><path d="M32 33 L52.8 21" stroke="#E2589B" stroke-width="2.2" stroke-linecap="round"/><circle cx="41.5" cy="19.5" r="4.2" fill="#E2589B" opacity=".3"/><circle cx="41.5" cy="19.5" r="2.4" fill="#fff"/><circle cx="32" cy="33" r="2.4" fill="#fff"/>
-      </svg>
-      <span class="wm">BTS<small>Beets Technological Solutions</small></span>
+      <svg class="mark" width="36" height="42" viewBox="0 0 100 116.9" aria-hidden="true"><path fill="#DA2A72" d="M0 0H64C81.7 0 96 13.4 96 30V42C96 48 92.6 53.4 88 57C95.6 63.6 100 73.2 100 84.2C100 98.8 91.8 110.4 79 113C81.6 106 81.4 98.4 78.4 93.6C74.2 87.4 63.4 84.2 51 82.6C46 82 42 80.6 42 77.6C42 75 44.2 73.4 48 73.4C56.6 73.4 63.8 75 65.6 80.2H79.4V73.6C79.4 66.4 72.6 61.2 62.4 61.2H44Q42 61.2 42 59.2V57.2Q42 55.2 44 55.2H64.9V39.1H0ZM0 55.2H21.1V116.9H0ZM42 97.8H56C61 97.8 63.2 100.4 63.2 103.4C63.2 107.6 59.2 110.7 53.5 110.7C46.8 110.7 42 107.2 42 102.2Z"/></svg>
+      <span class="wm"><span class="l1">BEETS TECHNOLOGICAL</span><span class="l2">SOLUTIONS</span></span>
     </a>
     <div class="bar-right"><button type="button" class="sub-btn" data-subscribe><svg class="ico"><use href="#i-bell"/></svg><span class="lbl">Subscribe</span></button>
     <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="main-nav">Menu</button></div>
@@ -768,7 +767,7 @@ dialog.sub{overflow:auto}
 
 <footer>
   <div class="wrap">
-    <span class="foot-brand"><a class="foot-logo" href="#home" aria-label="BTS, back to home page"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 4 L55 12 V30 C55 44.5 45.5 54.5 32 60 C18.5 54.5 9 44.5 9 30 V12 Z" fill="#14213D" stroke="#B8306F" stroke-width="2.5" stroke-linejoin="round"/><g clip-path="url(#bts-clip)" fill="none" stroke="#7F93BB" stroke-width="1.6" opacity=".7"><circle cx="32" cy="33" r="7"/><circle cx="32" cy="33" r="14"/><circle cx="32" cy="33" r="21"/><path d="M32 8V58M8 33H56" opacity=".5"/></g><path d="M32 33 L32 9 A24 24 0 0 1 52.8 21 Z" fill="url(#bts-sweep)" clip-path="url(#bts-clip)"/><path d="M32 33 L52.8 21" stroke="#E2589B" stroke-width="2.2" stroke-linecap="round"/><circle cx="41.5" cy="19.5" r="4.2" fill="#E2589B" opacity=".3"/><circle cx="41.5" cy="19.5" r="2.4" fill="#fff"/><circle cx="32" cy="33" r="2.4" fill="#fff"/></svg><b>BTS</b></a><span>© 2026 Beets Technological Solutions · Registered in Nigeria (CAC)</span></span>
+    <span class="foot-brand"><a class="foot-logo" href="#home" aria-label="Beets Technological Solutions, back to home page"><svg viewBox="0 0 100 116.9" aria-hidden="true"><path fill="#DA2A72" d="M0 0H64C81.7 0 96 13.4 96 30V42C96 48 92.6 53.4 88 57C95.6 63.6 100 73.2 100 84.2C100 98.8 91.8 110.4 79 113C81.6 106 81.4 98.4 78.4 93.6C74.2 87.4 63.4 84.2 51 82.6C46 82 42 80.6 42 77.6C42 75 44.2 73.4 48 73.4C56.6 73.4 63.8 75 65.6 80.2H79.4V73.6C79.4 66.4 72.6 61.2 62.4 61.2H44Q42 61.2 42 59.2V57.2Q42 55.2 44 55.2H64.9V39.1H0ZM0 55.2H21.1V116.9H0ZM42 97.8H56C61 97.8 63.2 100.4 63.2 103.4C63.2 107.6 59.2 110.7 53.5 110.7C46.8 110.7 42 107.2 42 102.2Z"/></svg><span class="wm"><span class="l1">BEETS TECHNOLOGICAL</span><span class="l2">SOLUTIONS</span></span></a><span class="foot-tag">Pushing limits…</span><span>© 2026 Beets Technological Solutions · Registered in Nigeria (CAC)</span></span>
     <span class="links"><a href="#services">Services</a><a href="#training">Training</a><a href="#vulnerabilities">Vulnerabilities</a><a href="#news">News</a><a href="#contact">Contact</a><a href="#subscribe" data-subscribe>Subscribe</a></span>
   </div>
 </footer>
