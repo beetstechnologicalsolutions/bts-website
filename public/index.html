@@ -829,8 +829,20 @@ var SOCIAL={linkedin:"",x:"",instagram:""};
 var CLIENTS=[];
 
 /* DATA:START */
-var UPDATED="25 Nov 2026, 23:26";
+var UPDATED="26 Nov 2026, 06:29";
 var VULNS=[
+ {
+  "id": "CVE-2026-123007",
+  "sev": "high",
+  "score": "8.1",
+  "product": "NGINX Open Source 1.9.5 to 1.31.8 and NGINX Plus, the web server and reverse proxy behind a large share of websites, when HTTP/2 is turned on, also CVE-2026-123633",
+  "title": "Singapore's cyber agency says attackers are using an NGINX HTTP/2 memory bug",
+  "what": "A crafted HTTP/2 request can overflow memory in an NGINX worker, which crashes it and, on systems where memory address randomisation is off or can be beaten, may let an attacker run code. CSA Singapore said on 26 November that this flaw is reportedly being exploited and that exploit code is public. A second HTTP/2 flaw fixed at the same time, CVE-2026-123633, has similar effects.",
+  "fix": "Update NGINX Open Source to 1.30.7 or 1.31.9, or NGINX Plus to 37.0.8.1 or 37.3.0.1, following F5 articles K000163926 and K000163928.",
+  "added": "26 Nov 2026",
+  "src": "CSA Singapore alert",
+  "url": "https://www.csa.gov.sg/alerts-and-advisories/alerts/al-2026-168/"
+ },
  {
   "id": "CVE-2026-133323",
   "sev": "critical",
@@ -943,10 +955,10 @@ var VULNS=[
   "id": "CVE-2026-132165",
   "sev": "critical",
   "score": null,
-  "product": "Drupal core, the open-source system behind many business and public sector websites, before 10.6.22, 11.3.22 and 11.4.13",
+  "product": "Drupal core, the open-source system behind many business and public sector websites, before 10.6.23, 11.3.23 and 11.4.14, also CVE-2026-136716",
   "title": "Drupal installer flaw is being used to take over live websites",
-  "what": "Under certain conditions, someone with no login can run Drupal's installer page (install.php) on a site that is already set up and reinstall it. That gives them control of the site and can let them run their own code on the server. Drupal says it has reports of attacks on live sites since 19 November.",
-  "fix": "Update to Drupal 10.6.22, 11.3.22 or 11.4.13. If you can't update yet, block access to /core/install.php in your web server settings. Older 10.5 and 11.2 releases get no fix.",
+  "what": "Under certain conditions, someone with no login can run Drupal's installer page (install.php) on a site that is already set up and reinstall it, which gives them control of the site and can let them run their own code. Drupal says attacks on live sites began on 19 November. On 25 November it fixed a second installer flaw, CVE-2026-136716, that still left some sites in an unusual or half-finished install state open to takeover, and says that one is also being exploited.",
+  "fix": "Update to Drupal 10.6.23, 11.3.23 or 11.4.14 and run update.php. If you can't update yet, block access to /core/install.php in your web server settings. Older 10.5 and 11.2 releases get no fix.",
   "added": "21 Nov 2026",
   "src": "Drupal Security Team",
   "url": "https://www.drupal.org/sa-core-2026-017"
@@ -1418,21 +1430,18 @@ var VULNS=[
   "added": "27 Oct 2026",
   "src": "Security Affairs",
   "url": "https://securityaffairs.com/201922/security/u-s-cisa-adds-google-brotli-and-adobe-commerce-and-magento-flaws-to-its-known-exploited-vulnerabilities-catalog.html"
- },
- {
-  "id": "CVE-2026-109618",
-  "sev": "critical",
-  "score": "9.2",
-  "product": "PHP 8.2 to 8.5, also CVE-2026-109619",
-  "title": "PHP2Shell flaws in PHP let attackers run code on web servers without logging in",
-  "what": "Two memory flaws in PHP, the language behind WordPress and many other websites, let an attacker with no login run code on the server. Censys counts more than 32 million PHP services on affected versions, and Check Point gateways were among those hit.",
-  "fix": "Update PHP to 8.5.12, 8.4.27, 8.3.36 or 8.2.35 or later. Sites on PHP 8.1 or older get no fix and should move to a supported version.",
-  "added": "26 Oct 2026",
-  "src": "The Hacker News",
-  "url": "https://thehackernews.com/2026/10/cisa-confirms-active-exploitation-of.html"
  }
 ];
 var NEWS=[
+ {
+  "region": "Global",
+  "date": "26 Nov 2026",
+  "title": "1Password says an attacker used a staff GitHub account to copy some customer data",
+  "body": "Password manager 1Password says an attacker took over an employee's work GitHub account, copied private source code and pushed bad code to backend systems, which led to customer account details being downloaded. Names, email addresses, account identifiers, public keys and tokens from invitation and recovery emails were taken for a small number of customers, who have been told directly. The company says vault contents, passwords and the keys protecting them were not accessed.",
+  "why": "If your team uses 1Password, warn staff this week to ignore unexpected emails asking them to sign in or recover their account, and to open the app directly instead.",
+  "src": "The Hacker News",
+  "url": "https://thehackernews.com/2026/11/1password-hacked-customer-data-and.html"
+ },
  {
   "region": "Global",
   "date": "25 Nov 2026",
@@ -1495,15 +1504,6 @@ var NEWS=[
   "why": "If you supply or work with schools, warn staff to expect phishing and to reject any password reset or sign-in approval they did not ask for.",
   "src": "The Register",
   "url": "https://www.theregister.com/cyber-crime/2026/11/24/education-software-suppliers-legacy-login-system-left-355000-school-email-addresses-exposed/5311622"
- },
- {
-  "region": "Global",
-  "date": "24 Nov 2026",
-  "title": "Check Point counts a record 2,830 ransomware victims named on leak sites last quarter",
-  "body": "Check Point Research says ransomware gangs named 2,830 victims on their leak sites between July and September 2026, the highest quarterly total it has recorded. The number of active ransomware brands rose to 117 from 91, and smaller groups outside the top ten now account for most victims. Business services firms made up about a third of victims, while fewer than one in four attacks now ends in a payment.",
-  "why": "Check this week that your backups have an offline copy, and test restoring one important folder so you know you could recover without paying.",
-  "src": "Help Net Security",
-  "url": "https://www.helpnetsecurity.com/2026/11/24/check-point-ransomware-attacks-q3-2026-report/"
  },
  {
   "region": "Global",
