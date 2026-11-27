@@ -829,7 +829,7 @@ var SOCIAL={linkedin:"",x:"",instagram:""};
 var CLIENTS=[];
 
 /* DATA:START */
-var UPDATED="26 Nov 2026, 21:26";
+var UPDATED="27 Nov 2026, 06:26";
 var VULNS=[
  {
   "id": "CVE-2026-123007",
@@ -1406,33 +1406,18 @@ var VULNS=[
   "added": "28 Oct 2026",
   "src": "SecurityWeek",
   "url": "https://www.securityweek.com/palo-alto-networks-patches-fragnesia-flaw-used-to-root-firewalls/"
- },
- {
-  "id": "CVE-2026-111497",
-  "sev": "critical",
-  "score": "9.2",
-  "product": "Google Brotli 1.0.3 to 1.2.0, and software that includes it such as Node.js, PHP, Bun and .NET",
-  "title": "Brotli compression flaw, known as Node2Shell, is under attack",
-  "what": "Brotli is a compression library built into web servers, browsers and many apps. A crafted compressed stream can corrupt memory, leak data or crash the program, and may let an attacker run code without logging in.",
-  "fix": "Update Brotli to 1.0.10, 1.1.1 or 1.2.1, and install the latest security updates for Node.js, PHP, Bun and .NET.",
-  "added": "27 Oct 2026",
-  "src": "Security Affairs",
-  "url": "https://securityaffairs.com/201922/security/u-s-cisa-adds-google-brotli-and-adobe-commerce-and-magento-flaws-to-its-known-exploited-vulnerabilities-catalog.html"
- },
- {
-  "id": "CVE-2026-48356",
-  "sev": "critical",
-  "score": "9.3",
-  "product": "Adobe Commerce and Magento Open Source before the July 2026 updates",
-  "title": "Magento online shop flaw, known as PolyShell, used to break into stores",
-  "what": "An upload flaw in Adobe Commerce and Magento lets an attacker run code with the rights of the victim's account once someone visits a crafted link. CISA has confirmed attacks on shops that have not installed the fix.",
-  "fix": "Install Adobe's July 2026 security updates (bulletin APSB26-73). If an agency runs your shop, ask them to confirm.",
-  "added": "27 Oct 2026",
-  "src": "Security Affairs",
-  "url": "https://securityaffairs.com/201922/security/u-s-cisa-adds-google-brotli-and-adobe-commerce-and-magento-flaws-to-its-known-exploited-vulnerabilities-catalog.html"
  }
 ];
 var NEWS=[
+ {
+  "region": "UK",
+  "date": "26 Nov 2026",
+  "title": "UK pushes back its National Cyber Action Plan again",
+  "body": "The government's plan for protecting the wider economy from criminal and state-backed hackers was first due by the end of 2025 and has now missed a mid-November target, The Record reports. People familiar with it say it should appear on 9 December, built around threat, growth and resilience. A House of Lords committee warned last week that the UK is badly underprepared for cascading crises, including cyberattacks.",
+  "why": "Rather than waiting for new rules, check your business against the five Cyber Essentials controls this week and list any gaps to fix.",
+  "src": "The Record",
+  "url": "https://therecord.media/britain-delays-national-cyber-action-plan-again"
+ },
  {
   "region": "Africa",
   "date": "26 Nov 2026",
@@ -1497,24 +1482,6 @@ var NEWS=[
   "url": "https://www.yahoo.com/news/us/articles/us-fincen-takes-systems-offline-144239506.html"
  },
  {
-  "region": "Europe",
-  "date": "24 Nov 2026",
-  "title": "Microsoft fixes an Azure API Management flaw used against Norwegian energy firms",
-  "body": "Microsoft says a flaw in the Classic Developer, Basic, Standard and Premium tiers of Azure API Management, its service for publishing company APIs, was exploited before it blocked it on 19 November. Norway's security authority says an unknown attacker went after access tokens, secrets and stored values, and Equinor reported an attack on 17 November. There is no CVE number yet.",
-  "why": "If you use Azure API Management Classic, rotate its keys, secrets and named values now, because Microsoft's fix does not cancel credentials stolen before it.",
-  "src": "Techzine",
-  "url": "https://www.techzine.eu/news/security/146028/microsoft-patches-actively-exploited-vulnerability-in-azure-api-management/"
- },
- {
-  "region": "UK",
-  "date": "24 Nov 2026",
-  "title": "UK warns firms that supply Ukraine's military of Russian sabotage",
-  "body": "The Ministry of Defence and the National Protective Security Authority, part of MI5, have told companies that support Ukraine's armed forces they could be targets. They say Russia is using hired proxies for low-skill sabotage such as arson against defence-linked sites across Europe. Ministers are holding private security briefings for defence and infrastructure bosses.",
-  "why": "If you are anywhere in a defence supply chain, check this week what your website and staff profiles reveal about your sites and people, and remind staff how to report anything suspicious.",
-  "src": "Reuters via Yahoo News",
-  "url": "https://uk.news.yahoo.com/uk-warns-russian-sabotage-threat-123549976.html"
- },
- {
   "region": "UK",
   "date": "24 Nov 2026",
   "title": "NCSC says attackers are using automated hacking tools to hit old, simple weaknesses",
@@ -1522,6 +1489,15 @@ var NEWS=[
   "why": "This week, list every system you have that faces the internet, switch off any you don't need, and make sure each remaining login has a strong password and two-step verification.",
   "src": "TechCrunch",
   "url": "https://techcrunch.com/2026/11/24/uk-warns-ai-driven-cyberattacks-are-exposing-years-of-weak-security/"
+ },
+ {
+  "region": "Global",
+  "date": "22 Nov 2026",
+  "title": "Attackers used a GL.iNet cloud flaw to plant malware on routers and KVM devices",
+  "body": "GL.iNet says someone exploited a flaw in GoodCloud, its cloud service for managing its routers and remote-access KVM boxes, to install malware on customers' devices. One consultancy found suspicious activity on 152 of the 183 routers it checked, including hidden remote shells. GL.iNet says the hole, which has no CVE number, is now closed, but it has not said how many customers were hit.",
+  "why": "If you use GL.iNet kit, install the latest security firmware this week (1.10.3 or later on most KVM models), reset it without keeping old settings, and change any passwords it holds.",
+  "src": "BleepingComputer",
+  "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-glinet-cloud-flaw-to-infect-routers-kvm-devices/"
  },
  {
   "region": "Nigeria",
