@@ -829,7 +829,7 @@ var SOCIAL={linkedin:"",x:"",instagram:""};
 var CLIENTS=[];
 
 /* DATA:START */
-var UPDATED="27 Nov 2026, 14:26";
+var UPDATED="27 Nov 2026, 17:27";
 var VULNS=[
  {
   "id": "CVE-2026-123007",
@@ -842,6 +842,18 @@ var VULNS=[
   "added": "26 Nov 2026",
   "src": "CSA Singapore alert",
   "url": "https://www.csa.gov.sg/alerts-and-advisories/alerts/al-2026-168/"
+ },
+ {
+  "id": "CVE-2026-136716",
+  "sev": "critical",
+  "score": "9.8",
+  "product": "Drupal core, the open-source system behind many business and public sector websites, before 10.6.23, 11.3.23 and 11.4.14",
+  "title": "Drupal says a second installer flaw is being used to take over sites",
+  "what": "The fix Drupal released on 18 November for CVE-2026-132165 left some sites exposed. Sites in an unusual or half-finished install state, including live production sites, can still have the installer abused to take over the site, and that state does not show up in the admin screens. Drupal says attackers are already exploiting this new flaw.",
+  "fix": "Update to Drupal 10.6.23, 11.3.23 or 11.4.14, run update.php on production sites, and lock down the installer. Drupal 11.2 and older and 10.5 and older get no fix.",
+  "added": "26 Nov 2026",
+  "src": "The Hacker News",
+  "url": "https://thehackernews.com/2026/11/drupal-warns-of-new-highly-critical.html"
  },
  {
   "id": "CVE-2026-133323",
@@ -1446,6 +1458,15 @@ var NEWS=[
   "url": "https://thehackernews.com/2026/11/switzerland-confirms-ai-assisted.html"
  },
  {
+  "region": "Europe",
+  "date": "26 Nov 2026",
+  "title": "News agency AFP takes its client content platform offline after a cyberattack",
+  "body": "Agence France-Presse said attackers broke into AFP Forum, the platform its media clients use to view and download its stories and photos, at about 01:30 Paris time on 26 November. AFP isolated the platform and offered clients other ways to get content. It has not said who was behind the attack or whether any data was taken.",
+  "why": "If a supplier portal you rely on goes down, check this week that you have a second way to get what you need from them and a contact who can confirm it.",
+  "src": "AFP via Yahoo Noticias",
+  "url": "https://es-us.noticias.yahoo.com/afp-v%C3%ADctima-ciberataque-plataforma-afp-185935026.html"
+ },
+ {
   "region": "UK",
   "date": "26 Nov 2026",
   "title": "UK pushes back its National Cyber Action Plan again",
@@ -1480,15 +1501,6 @@ var NEWS=[
   "why": "Ask the outside booking or payment systems you use what customer data they keep and how they will tell you about a breach, and note the answers this week.",
   "src": "Security Affairs",
   "url": "https://securityaffairs.com/204049/data-breach/australias-flight-centre-data-breach-exposes-customer-records-and-passport-details.html"
- },
- {
-  "region": "Global",
-  "date": "26 Nov 2026",
-  "title": "FIFA confirms a cyberattack exposed some personal and business data",
-  "body": "Football's world governing body told Reuters that criminals got unauthorised access to a limited set of personal and business information, and that it is working with law enforcement. FIFA has not said how many people are affected or when the attack happened. A person close to the matter said less than 0.1% of the data FIFA holds was involved.",
-  "why": "If you deal with FIFA or sell World Cup related goods, warn staff this week to expect fake FIFA emails and to check any payment or login request by calling a number you already have.",
-  "src": "Reuters via Yahoo News",
-  "url": "https://sports.yahoo.com/soccer/articles/soccer-fifa-victim-cyber-attack-115642586.html"
  },
  {
   "region": "Global",
